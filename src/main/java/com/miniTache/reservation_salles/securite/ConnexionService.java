@@ -21,9 +21,7 @@ public class ConnexionService {
     public String connecter(String email, String password) {
         Authentication authentication =
                 authenticationManager.authenticate(
-                        new UsernamePasswordAuthenticationToken(
-                                email, password
-                        )
+                        new UsernamePasswordAuthenticationToken(email, password)
                 );
 
         return jwtService.genererToken(authentication);

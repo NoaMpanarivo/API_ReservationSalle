@@ -3,5 +3,9 @@ package com.miniTache.reservation_salles.Repository;
 import com.miniTache.reservation_salles.modele.Room;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RoomRepository extends JpaRepository<Room,Long> {
+public interface RoomRepository extends JpaRepository<Room, Long> {
+
+    boolean existsByName(String name);
+
+    boolean existsByNameAndIdRoomNot(String name, Long idRoom);
 }

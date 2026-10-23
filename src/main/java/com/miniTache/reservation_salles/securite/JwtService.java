@@ -27,7 +27,7 @@ public class JwtService {
 
         String role = authentication.getAuthorities()
                 .stream()
-                .map(GrantedAuthority::getAuthority)
+                .map(authority -> authority.getAuthority())
                 .findFirst()
                 .orElseThrow();
 
